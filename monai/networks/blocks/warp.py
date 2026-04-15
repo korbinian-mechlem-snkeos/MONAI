@@ -102,7 +102,7 @@ class Warp(nn.Module):
         if (
             self.ref_grid is not None
             and self.ref_grid.shape[0] == ddf.shape[0]
-            and self.ref_grid.shape[1:] == ddf.shape[2:]
+            and self.ref_grid.shape[2:] == ddf.shape[2:]
         ):
             return self.ref_grid  # type: ignore
         mesh_points = [torch.arange(0, dim) for dim in ddf.shape[2:]]
